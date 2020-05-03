@@ -1,0 +1,81 @@
+.Words {
+	/* margin: -20% 0% 0% 0%; */
+	padding: 50px;
+	padding-left: -15px;
+	font-family: "Luckiest Guy", cursive;
+	-webkit-text-stroke: white 1px;
+	font-size: 3em;
+	width: fit-content;
+	font-weight: bolder;
+	color: #00000000;
+	text-transform: uppercase;
+	letter-spacing: 2px;
+}
+
+.Words-line {
+	height: 50px;
+	overflow: hidden;
+	position: relative;
+}
+.Words-line:nth-child(odd) {
+	transform: skew(60deg, -30deg) scaleY(0.5);
+}
+.Words-line:nth-child(even) {
+	transform: skew(0deg, -30deg) scaleY(1.2);
+}
+.Words-line:nth-child(1) {
+	left: 0px;
+}
+.Words-line:nth-child(2) {
+	left: 20px;
+}
+.Words-line:nth-child(3) {
+	left: 40px;
+}
+.Words-line:nth-child(4) {
+	left: 55px;
+}
+
+p {
+	margin: 0%;
+	height: 50px;
+	line-height: 45px;
+	width: fit-content;
+	transition: all 0.4s ease-in-out;
+	animation: nextLine 5s linear 2s infinite;
+}
+
+.Words:hover p {
+	cursor: pointer;
+	/* transform: translate3d(0, -60px, 0); */
+}
+
+@keyframes nextLine {
+	0% {
+		transform: translate3d(0, 0px, 0);
+	}
+	25% {
+		transform: translate3d(0, -55px, 0);
+	}
+	50% {
+		transform: translate3d(0, -55px, 0);
+	}
+	75% {
+		transform: translate3d(0, 0px, 0);
+	}
+	90% {
+		transform: translate3d(0, 0px, 0);
+	}
+	100% {
+		transform: translate3d(0, 0px, 0);
+	}
+}
+
+@media (max-width: 840px) {
+	.Words {
+		font-size: 1.75em;
+		/* margin-top: 0%; */
+		/* margin-left: -20px; */
+		padding-top: 0px;
+	}
+}

@@ -1,0 +1,160 @@
+@import url("https://fonts.googleapis.com/css?family=Luckiest+Guy&display=swap");
+@import url("https://fonts.googleapis.com/css?family=Permanent+Marker&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@1,700&display=swap");
+/* font-family: 'Space Mono', monospace; */
+body {
+	margin: 0;
+	background-image: url(../img/bg.jpg);
+}
+
+#bg {
+	clip-path: polygon(76% 0, 100% 0, 100% 100%, 0% 100%);
+	background-color: #3489f8;
+	background-image: url(../img/bg2.png);
+	width: 100%;
+	height: 100vh;
+	position: absolute;
+	z-index: -1;
+}
+
+.row {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	align-content: center;
+	align-items: center;
+	/* margin: 8% 0% 0% -10%; */
+}
+
+.col {
+	max-width: 50%;
+}
+
+@media (max-width: 840px) {
+	#bg {
+		clip-path: polygon(0 0, 100% 0, 100% 36%, 0% 100%);
+	}
+
+	.row {
+		flex-direction: column-reverse;
+		justify-content: center;
+		align-items: center;
+	}
+
+	.col {
+		max-width: 100%;
+	}
+}
+
+#card {
+	background: inherit;
+	width: 85%;
+	text-align: center;
+}
+
+#header {
+	display: flex;
+	flex-direction: row;
+	justify-content: flex-end;
+	align-content: space-around;
+	align-items: flex-start;
+	transition: all 0.4s ease-in-out;
+	animation: fadeDown 1s linear 0s 1;
+}
+
+@keyframes fadeDown {
+	0% {
+		transform: translate(0px, -100px);
+	}
+	100% {
+		transform: translate(0px, 0px);
+	}
+}
+
+.icon {
+	width: 30px;
+}
+
+.bticon {
+	width: 20px;
+	margin-left: 10px;
+}
+
+#primary > div {
+	display: flex;
+	flex-wrap: wrap;
+	flex-direction: row-reverse;
+	justify-content: center;
+	align-items: center;
+	align-content: center;
+}
+
+.change {
+	margin: 10px;
+	padding: 5px;
+	transition: all 0.15s ease-in-out;
+}
+
+.change:hover {
+	transform: translate(0px, -10px);
+	cursor: pointer;
+}
+
+.button {
+	border-width: 3px;
+	border-style: solid;
+	border-radius: 10px;
+	border-color: #3489f8;
+	text-decoration: none;
+	background: rgb(250, 250, 250);
+	display: block;
+	padding: 7px 10px;
+	width: min-content;
+	margin: 5px;
+}
+.button:hover {
+	cursor: pointer;
+}
+.stroke {
+	display: flex;
+	align-items: center;
+	margin: 0%;
+	font-family: "Space Mono", monospace;
+	font-size: 1.3em;
+	color: #3489f8;
+	font-weight: bolder;
+	text-transform: uppercase;
+	font-weight: 100;
+}
+
+#about > .button {
+	border-color: #f83434c4;
+}
+
+#about > .stroke {
+	color: #f83434c4;
+}
+
+#proj > .button {
+	border-color: #31c704;
+}
+
+#proj > .stroke {
+	color: #31c704;
+}
+
+@media (max-width: 840px) {
+	.change,
+	h3 {
+		font-size: 1.5em;
+	}
+	.stroke {
+		font-size: 1em;
+	}
+	h1 {
+		font-size: 2.25em;
+	}
+	.icon {
+		width: 30px;
+	}
+}
