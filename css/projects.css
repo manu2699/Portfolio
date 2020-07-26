@@ -90,7 +90,7 @@ p {
 	flex-flow: row wrap;
 	align-items: center;
 	justify-content: center;
-	border-style: solid;
+	border-style: double;
 	border-color: #3489f8;
 	border-radius: 50px 50px 0px 0px;
 }
@@ -101,12 +101,12 @@ p {
 	background-image: url(/img/bg.png);
 }
 
-#kbdc {
-	background-color: #3489f8;
-}
-
-#kbd {
-	color: #054aa3;
+#kbdc,
+#kbd > .opt > #link {
+	background-color: rgb(238, 43, 82);
+	color: white;
+	border-color: white;
+	padding: 2px;
 }
 
 #bingo,
@@ -126,15 +126,17 @@ p {
 
 #covid,
 #covidc > .opt > #link {
-	background-color: #d154f7;
+	background-color: #3489f8;
 	color: white;
 	border-color: white;
 	padding: 2px;
+	font-size: 1em;
 }
 #covidc,
 #covidc > .opt > #git {
-	color: #5c0577;
-	border-color: #5c0577;
+	color: #054aa3;
+	border-color: #054aa3;
+	font-size: 1em;
 }
 
 #intern,
@@ -153,7 +155,7 @@ p {
 
 #dept,
 #deptc > .opt > #link {
-	background-color: rgb(238, 43, 82);
+	background-color: #d154f7;
 	color: white;
 	border-color: white;
 	padding: 2px;
@@ -161,8 +163,8 @@ p {
 
 #deptc,
 #deptc > .opt > #git {
-	color: rgb(126, 3, 27);
-	border-color: rgb(126, 3, 27);
+	color: #5c0577;
+	border-color: #5c0577;
 }
 
 .mobile {
@@ -277,7 +279,7 @@ ul {
 
 @media (max-width: 840px) {
 	.mobile {
-		width: 75%;
+		width: 65%;
 	}
 
 	.desktop {
@@ -307,6 +309,8 @@ ul {
 	align-items: flex-start;
 	justify-content: space-between;
 	transition: all 0.4s ease-in-out;
+	margin: 5px;
+	margin-top: -5px;
 	animation: fadeDown 1s linear 0s 1;
 }
 

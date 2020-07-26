@@ -1,3 +1,27 @@
+/* width */
+::-webkit-scrollbar {
+	width: 8px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+	box-shadow: inset 0 0 5px grey;
+	/* border-radius: 100px; */
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+	background: #3489f8;
+	background-image: url(/img/bg.png);
+	/* border-radius: 10px; */
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+	background: #689cfd;
+	background-image: url(/img/bg.png);
+}
+
 .overlay {
 	position: absolute;
 	bottom: 0;
@@ -17,6 +41,8 @@ a {
 .btn {
 	background-color: rgba(0, 0, 0, 0);
 	border-style: none;
+	outline: none;
+	cursor: pointer;
 }
 
 #left {

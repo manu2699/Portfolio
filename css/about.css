@@ -215,6 +215,8 @@ ul {
 	justify-content: space-between;
 	transition: all 0.4s ease-in-out;
 	animation: fadeDown 1s linear 0s 1;
+	margin: 5px;
+	margin-top: -5px;
 }
 
 @keyframes fadeDown {
