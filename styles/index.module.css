@@ -17,16 +17,16 @@
 
 .bgSvg1 {
 	position: fixed;
-	top: -58px;	
+	top: -58px;
 	right: -10%;
 	opacity: 8%;
 }
 
 .bgSvg2 {
 	position: fixed;
-	transform: rotate(30deg);
-	bottom: -36px;	
-	left: -26px;
+	transform: rotate(40deg);
+	bottom: -32px;
+	left: -42px;
 	opacity: 8%;
 }
 

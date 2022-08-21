@@ -23,7 +23,9 @@ const Home: NextPage = () => {
 				<AboutComponent />
 			</main>
 
-			<footer className={styles.footer}>made with love by Maneesh</footer>
+			<footer className={styles.footer}>
+				{"🎨 & <Developed />"} with 💖 by Maneesh
+			</footer>
 		</React.Fragment>
 	);
 };
