@@ -1,11 +1,6 @@
 .main {
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
-	align-items: center;
 	width: 100%;
-	height: 100vh;
-	max-height: 100vh;
+	height: 100%;
 	background-color: var(--primary-bg);
 	color: var(--primary-text);
 }
@@ -20,17 +15,19 @@
 	background-color: var(--primary-bg);
 }
 
-.button {
-	width: max-content;
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	padding: 8px 12px;
-	gap: 8px;
-	color: var(--primary-text);
-	background: var(--primary-yellow-100);
-	border: 1px solid var(--primary-yellow-400);
-	border-radius: 2px;
+.bgSvg1 {
+	position: fixed;
+	top: -58px;	
+	right: -10%;
+	opacity: 8%;
+}
+
+.bgSvg2 {
+	position: fixed;
+	transform: rotate(30deg);
+	bottom: -36px;	
+	left: -26px;
+	opacity: 8%;
 }
 
 /* @media (max-width: 600px) {

@@ -1,0 +1,12 @@
+.aboutContainer {
+	width: 92%;
+	height: 45rem;
+	padding: 32px;
+	display: grid;
+	align-items: center;
+	align-self: center;
+	/* grid-template-columns: 1fr 1fr 4fr; */
+	/* position: relative; */
+	/* border-radius: 8px; */
+	/* box-shadow: 1px 1px 6px var(--shadow-color); */
+}

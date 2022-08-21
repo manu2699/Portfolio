@@ -1,0 +1,40 @@
+.primaryButton {
+	width: max-content;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	padding: 8px 12px;
+	gap: 8px;
+	color: var(--primary-text);
+	background: var(--primary-yellow-100);
+	border: 1px solid var(--primary-yellow-400);
+	outline: 1px solid var(--primary-yellow-400);
+	outline-offset: -1px;
+	transition: 0s;
+	border-radius: 2px;
+}
+
+.primaryButton:hover {
+	outline-offset: 150px;
+	cursor: pointer;
+	outline-color: transparent;
+	transition: 0.5s;
+}
+
+.wavyTitle {
+	position: relative;
+	font-size: 24px;
+	text-decoration-line: underline;
+	text-decoration-style: wavy;
+	text-decoration-color: var(--primary-yellow-200);
+}
+
+.titleIndex {
+	position: absolute;
+	top: -46px;
+	left: -12px;
+	color: var(--primary-yellow-200);
+	text-decoration: none;
+	opacity: 10%;
+	font-size: 76px;
+}

@@ -5,7 +5,7 @@ import {
 	ReactFragment,
 	ReactPortal
 } from "react";
-import styles from "./../styles/index.module.css";
+import styles from "./../../styles/primitives.module.css";
 
 type ButtonProps = {
 	onClick: MouseEventHandler<HTMLElement>;
@@ -20,7 +20,7 @@ type ButtonProps = {
 
 export const Button = (props: ButtonProps) => {
 	return (
-		<div className={styles.button} onClick={props.onClick}>
+		<div className={styles.primaryButton} onClick={props.onClick}>
 			{props.icon}
 			{props.text}
 		</div>
