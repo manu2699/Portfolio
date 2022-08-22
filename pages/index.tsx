@@ -1,7 +1,12 @@
 import React from "react";
 import type { NextPage } from "next";
 
-import { HeaderComponent, HomeComponent, AboutComponent } from "../components";
+import {
+	HeaderComponent,
+	HomeComponent,
+	AboutComponent,
+	WorksComponent
+} from "../components";
 
 import styles from "./../styles/index.module.css";
 
@@ -21,6 +26,7 @@ const Home: NextPage = () => {
 				</div>
 				<HomeComponent />
 				<AboutComponent />
+				<WorksComponent />
 			</main>
 
 			<footer className={styles.footer}>
