@@ -24,6 +24,16 @@ a {
   justify-content: center;
 }
 
+*::selection  {
+  color: var(--primary-text);
+  background: var(--primary-yellow-100);
+}
+
+*::-moz-selection{
+  color: var(--primary-text);
+  background: var(--primary-yellow-100);
+}
+
 @media (prefers-color-scheme: dark) {
   html {
     color-scheme: dark;

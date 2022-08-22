@@ -1,11 +1,11 @@
 .aboutContainer {
-	width: 92%;
+	width: 80%;
 	height: 45rem;
 	padding: 32px;
 	display: flex;
 	flex-direction: column;
 	align-self: center;
-	gap: 36px;
+	gap: 42px;
 }
 
 .aboutContainer p{
@@ -17,5 +17,7 @@
 	display: flex;
 	gap: 36px;
 	flex-wrap: wrap;
+	align-self: center;
 	opacity: 90%;
 }
+
