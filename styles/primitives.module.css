@@ -5,7 +5,7 @@
 	align-items: center;
 	padding: 8px 12px;
 	gap: 8px;
-	color: var(--primary-text);
+	color: var(--secondary-text);
 	background: var(--primary-yellow-100);
 	border: 1px solid var(--primary-yellow-400);
 	outline: 1px solid var(--primary-yellow-400);

@@ -3,10 +3,18 @@
 :root {
   --primary-bg: #F3F6FB;
   --primary-text: #254A58;
+  --secondary-text: #254A58;
   --shadow-color: #CEDEF3;
   
   /* Theme colors */
   --primary-yellow-400: #FCBC55;
   --primary-yellow-200: #EBC174;
   --primary-yellow-100: #F9E0B9;
+}
+
+@media (prefers-color-scheme: dark){
+  :root{
+    --primary-bg: #29363A;
+    --primary-text: #D7ECF5;
+  }
 }

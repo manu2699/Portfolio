@@ -25,15 +25,15 @@
 }
 
 .menuBar {
-	background-color: var(--primary-text);
+	background-color: var(--secondary-text);
 	height: 16px;
 	width: 100%;
 	display: flex;
 	align-items: center;
 	gap: 6px;
 	padding: 0 6px;
-	border-top-left-radius: 6px;
-	border-top-right-radius: 6px;
+	border-top-left-radius: 8px;
+	border-top-right-radius: 8px;
 }
 
 .desktopHero,
@@ -48,6 +48,7 @@
 	padding: 16px;
 	font-size: 22px;
 	gap: 12px;
+	color: var(--secondary-text);
 }
 
 .stacksSection {
@@ -120,6 +121,7 @@
 .time {
 	width: 65px;
 	font-size: 12px;
+	color: var(--secondary-text);
 }
 
 .linksRow {
