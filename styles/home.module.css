@@ -1,5 +1,6 @@
-.homePage{
+.homePage {
 	height: 100vh;
+	position: relative;
 }
 
 .heroContainer {
@@ -28,11 +29,11 @@
 	align-items: baseline;
 }
 
-.socialIcon{
+.socialIcon {
 	transition: all 0.3s ease-in-out;
 }
 
-.socialIcon:hover{
+.socialIcon:hover {
 	cursor: pointer;
 	transform: translateY(-5px);
 }
@@ -63,8 +64,7 @@
 	transform: translateX(-78px);
 }
 
-.texts{
-	
+.texts {
 }
 
 .title::first-letter {
@@ -101,6 +101,15 @@
 	right: 24px;
 }
 
+.modesToggle {
+	position: absolute;
+	right: 72px;
+	bottom: 72px;
+}
+
+.modesToggle svg:hover {
+	cursor: pointer;
+}
 
 @media (max-width: 980px) {
 	.heroContainer {
@@ -125,16 +134,20 @@
 		top: 8px;
 		left: 30%;
 	}
-	.stamp{
+	.stamp {
 		top: -100px;
-    right: 12px;
+		right: 12px;
 	}
 	.title {
 		font-size: 66px;
-    transform: translateX(-58px);
+		transform: translateX(-58px);
 		-webkit-text-stroke-width: 2px;
 	}
-	.texts{
+	.texts {
 		font-size: 20px;
+	}
+	.modesToggle {
+		right: 32px;
+		bottom: 32px;
 	}
 }

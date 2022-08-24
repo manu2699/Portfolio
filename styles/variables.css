@@ -12,6 +12,11 @@
   --primary-yellow-100: #F9E0B9;
 }
 
+[data-theme="dark"] {
+  --primary-bg: #29363A;
+  --primary-text: #D7ECF5;
+}
+
 @media (prefers-color-scheme: dark){
   :root{
     --primary-bg: #29363A;

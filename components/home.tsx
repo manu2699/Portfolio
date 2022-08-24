@@ -1,3 +1,4 @@
+import { useState, useEffect } from "react";
 import { Button } from "./primitives/button";
 
 import styles from "./../styles/home.module.css";
@@ -9,6 +10,8 @@ import EmailIcon from "./../public/svgs/Email.svg";
 import LogoIcon from "./../public/svgs/LogoLight.svg";
 import StampIcon from "./../public/svgs/Stamp.svg";
 import DownloadIcon from "./../public/svgs/Download.svg";
+import LightModeIcon from "./../public/svgs/Light.svg";
+import DarkModeIcon from "./../public/svgs/Dark.svg";
 
 const SocialLinks = [
 	{
@@ -35,6 +38,23 @@ const SocialLinks = [
 ];
 
 export const HomeComponent = () => {
+	const [currMode, setCurrMode] = useState("");
+	useEffect(function onLoad() {
+		let activeMode: string = localStorage.getItem("theme") || "light";
+		setCurrMode(activeMode);
+		document.documentElement.setAttribute("data-theme", activeMode);
+	}, []);
+
+	function toggleModes(isDark: boolean) {
+		if (isDark) {
+			document.documentElement.setAttribute("data-theme", "dark");
+		} else {
+			document.documentElement.setAttribute("data-theme", "light");
+		}
+		localStorage.setItem("theme", isDark ? "dark" : "light");
+		setCurrMode(isDark ? "dark" : "light");
+	}
+
 	return (
 		<div className={`page ${styles.homePage}`}>
 			<div className={styles.heroContainer}>
@@ -77,6 +97,17 @@ export const HomeComponent = () => {
 				<div className={styles.stamp}>
 					<StampIcon />
 				</div>
+			</div>
+			<div className={styles.modesToggle}>
+				{currMode === "light" ? (
+					<div onClick={() => toggleModes(true)}>
+						<DarkModeIcon />
+					</div>
+				) : (
+					<div onClick={() => toggleModes(false)}>
+						<LightModeIcon />
+					</div>
+				)}
 			</div>
 		</div>
 	);
