@@ -30,6 +30,35 @@
 	opacity: 8%;
 }
 
+.rotatingDiv {
+	position: fixed;
+	bottom: -40px;
+	left: -50px;
+	width: 120px;
+	height: 120px;
+	border-radius: 5px;
+	background: var(--primary-text);
+	opacity: 10%;
+	/* border: 1px solid var(--primary-text); */
+	animation: rotateBox 60s infinite linear;
+	box-shadow: 1px 1px 16px var(--shadow-color);
+}
+
+@keyframes rotateBox {
+	from {
+		-webkit-transform: rotate(0deg);
+	}
+	to {
+		-webkit-transform: rotate(359deg);
+	}
+}
+
+@media (max-width: 980px) {
+	.rotatingDiv{
+		z-index: -1;
+	}
+}
+
 /* @media (max-width: 600px) {
 }
 

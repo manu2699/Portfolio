@@ -14,22 +14,23 @@ const SocialLinks = [
 	{
 		name: "Github",
 		svgComponent: <GithubIcon />,
-		onClick: () => {}
+		onClick: () => window.open("https://github.com/manu2699", "_blank")
 	},
 	{
 		name: "Twitter",
 		svgComponent: <TwitterIcon />,
-		onClick: () => {}
+		onClick: () => window.open("https://twitter.com/manuvk_36", "_blank")
 	},
 	{
 		name: "Linkedin",
 		svgComponent: <LinkedinIcon />,
-		onClick: () => {}
+		onClick: () =>
+			window.open("https://www.linkedin.com/in/manuvk/", "_blank")
 	},
 	{
 		name: "Email",
 		svgComponent: <EmailIcon />,
-		onClick: () => {}
+		onClick: () => window.open("mailto:maneeshvijaykar@gmail.com", "_blank")
 	}
 ];
 
@@ -39,7 +40,12 @@ export const HomeComponent = () => {
 			<div className={styles.heroContainer}>
 				<div className={styles.contactSection}>
 					<Button
-						onClick={() => {}}
+						onClick={() =>
+							window.open(
+								"https://drive.google.com/file/d/10Ti9fUeYoOsS0I5bP4wCjBYBddH3j-w8/view?usp=sharing",
+								"_blank"
+							)
+						}
 						text={"Resume"}
 						icon={<DownloadIcon />}
 					/>

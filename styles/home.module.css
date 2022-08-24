@@ -23,6 +23,10 @@
 	gap: 16px;
 }
 
+.socialIcons svg:hover{
+	cursor: pointer;
+}
+
 .heroText {
 	display: flex;
 	flex-direction: column;

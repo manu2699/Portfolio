@@ -78,20 +78,22 @@ export const AboutComponent = () => {
 			<div className={styles.aboutContainer}>
 				<Title text={"About me"} index={"01"} />
 				<p>
-					Hello, Im Maneeesh, a software developer based in Chennai,
-					Tamil Nadu. I love building softwares using web stack. My
-					current role kinda deeply aligned with frontend part thus i
-					work with React Javascript Typescript Webpacks on Daily
-					basis I have also worked on Backend stuffs like Node Express
-					Mongo SQL Redis Sockets.io etc.... for my personal project
-					And i do occasionaly does Ui Design 😅 with Figma, Adobe Xd,
+					Hello, Im Maneesh, a software developer based in Chennai,
+					Tamil Nadu., currently work as frontend engineer in
+					Kissflow. I love building softwares using
+					web stack, & I have some experience with backend stuffs from my
+					personal, freelance & intern projects.. And i occasionaly does
+					UI/UX Design xD with Figma, Adobe XD.
 				</p>
-				<div className={styles.knownStack}>
-					{KnownStack.map((item, index) => (
-						<div className={styles.stackItem} key={index}>
-							{item.svgComponent}
-						</div>
-					))}
+				<div>
+					<p>I have worked on following technologies</p>
+					<div className={styles.knownStack}>
+						{KnownStack.map((item, index) => (
+							<div className={styles.stackItem} key={index}>
+								{item.svgComponent}
+							</div>
+						))}
+					</div>
 				</div>
 			</div>
 		</div>
