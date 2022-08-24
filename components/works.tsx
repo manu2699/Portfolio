@@ -32,7 +32,19 @@ const Desktop = ({ work }: { work: TypeWork }) => {
 				<div className={styles.circle2} />
 				<div className={styles.circle3} />
 			</div>
-			<div className={styles.desktopHero}>{work.label}</div>
+			<div className={styles.desktopHero}>
+				{work.label}
+				<div className={styles.stacksSection}>
+					{work.stacksused.map(
+						(stacks, index) =>
+							`${stacks.name}${
+								index === work.stacksused.length - 1
+									? ""
+									: " | "
+							}`
+					)}
+				</div>
+			</div>
 			<div className={styles.desktopContent}>{work.description}</div>
 			<div className={styles.linksRow}>
 				{work.links.map((link, index) => {
@@ -73,7 +85,19 @@ const Mobile = ({ work }: { work: TypeWork }) => {
 				<div className={styles.notch} />
 				<div className={styles.time}>{time}</div>
 			</div>
-			<div className={styles.mobileHero}>{work.label}</div>
+			<div className={styles.mobileHero}>
+				{work.label}
+				<div className={styles.stacksSection}>
+					{work.stacksused.map(
+						(stacks, index) =>
+							`${stacks.name}${
+								index === work.stacksused.length - 1
+									? ""
+									: " | "
+							}`
+					)}
+				</div>
+			</div>
 			<div className={styles.mobileContent}>{work.description}</div>
 			<div className={styles.linksRow}>
 				{work.links.map((link, index) => {

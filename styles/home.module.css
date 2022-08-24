@@ -1,3 +1,7 @@
+.homePage{
+	height: 100vh;
+}
+
 .heroContainer {
 	width: 80%;
 	height: 30rem;
@@ -21,10 +25,16 @@
 .socialIcons {
 	display: flex;
 	gap: 16px;
+	align-items: baseline;
 }
 
-.socialIcons svg:hover{
+.socialIcon{
+	transition: all 0.3s ease-in-out;
+}
+
+.socialIcon:hover{
 	cursor: pointer;
+	transform: translateY(-5px);
 }
 
 .heroText {
@@ -51,6 +61,10 @@
 	-webkit-text-stroke-width: 2.8px;
 	-webkit-text-stroke-color: var(--primary-text);
 	transform: translateX(-78px);
+}
+
+.texts{
+	
 }
 
 .title::first-letter {
@@ -90,6 +104,8 @@
 
 @media (max-width: 980px) {
 	.heroContainer {
+		width: 100%;
+		padding: 24px;
 		display: flex;
 		flex-direction: column-reverse;
 		gap: 24px;
@@ -108,5 +124,16 @@
 		position: absolute;
 		top: 8px;
 		left: 30%;
+	}
+	.stamp{
+		top: -100px;
+    right: 12px;
+	}
+	.title {
+		font-size: 66px;
+    transform: translateX(-58px);
+	}
+	.texts{
+		font-size: 20px;
 	}
 }

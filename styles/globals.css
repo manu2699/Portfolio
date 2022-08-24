@@ -19,7 +19,7 @@ a {
 
 .page{
   width: 100%;
-  min-height: 99vh;
+  /* min-height: 99vh; */
   display: flex;
   justify-content: center;
 }

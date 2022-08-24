@@ -55,7 +55,8 @@
 
 @media (max-width: 980px) {
 	.rotatingDiv{
-		z-index: -1;
+    bottom: -25px;
+    left: -88px;
 	}
 }
 

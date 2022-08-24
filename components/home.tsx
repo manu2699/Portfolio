@@ -36,7 +36,7 @@ const SocialLinks = [
 
 export const HomeComponent = () => {
 	return (
-		<div className={"page"}>
+		<div className={`page ${styles.homePage}`}>
 			<div className={styles.heroContainer}>
 				<div className={styles.contactSection}>
 					<Button
@@ -65,12 +65,14 @@ export const HomeComponent = () => {
 					<div className={`${styles.line} ${styles.line2}`} />
 				</div>
 				<div className={styles.heroText}>
-					<h2>👋 Hello world</h2>
+					<h2 className={styles.texts}>👋 Hello world</h2>
 					<div className={styles.mainTitle}>
 						<LogoIcon />
-						<h1 className={styles.title}>Maneesh K</h1>
+						<h1 className={styles.title}>Maneesh</h1>
 					</div>
-					<h2>I’m a Software Engineer based in Chennai, India</h2>
+					<h2 className={styles.texts}>
+						I’m a Software Engineer based in Chennai, India
+					</h2>
 				</div>
 				<div className={styles.stamp}>
 					<StampIcon />
