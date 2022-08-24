@@ -10,7 +10,7 @@ export const HeaderComponent = () => {
 				content='Maneesh, Portfolio, Manuvk, Developer, Software'
 			/>
 			<meta name='author' content='Maneesh K' />
-			<link rel='icon' href='/svgs/LogoLight.svg' />
+			<link rel='icon' href='/Logo.svg' />
 		</Head>
 	);
 };
