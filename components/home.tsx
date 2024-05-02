@@ -10,6 +10,7 @@ import EmailIcon from "./../public/svgs/Email.svg";
 import LogoIcon from "./../public/svgs/LogoLight.svg";
 import StampIcon from "./../public/svgs/Stamp.svg";
 import DownloadIcon from "./../public/svgs/Download.svg";
+import { useEffect } from "react";
 
 const SocialLinks = [
 	{
@@ -36,7 +37,9 @@ const SocialLinks = [
 ];
 
 export const HomeComponent = () => {
-
+	useEffect(function onLoad() {
+		document.getElementById("wavehands")?.classList.add("wave");
+	}, []);
 	return (
 		<div className={`page ${styles.homePage}`}>
 			<div className={styles.heroContainer}>
