@@ -81,9 +81,9 @@ export const AboutComponent = () => {
 					Hello, Im Maneesh, a software developer based in Chennai,
 					Tamil Nadu., currently work as frontend engineer in
 					Kissflow. I love building softwares using
-					web stack, & I have some experience with backend stuffs from my
-					personal, freelance & intern projects.. And i occasionaly does
-					UI/UX Design xD with Figma, Adobe XD.
+					web stack, & have some experience with backend stuffs from my
+					personal/hobby projects.. And i occasionaly does
+					UI/UX Design xD with Figma😅.
 				</p>
 				<div>
 					<p>I have worked on following technologies</p>
