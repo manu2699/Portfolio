@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+/* eslint-disable @next/next/no-img-element */
 import { Button } from "./primitives/button";
 
 import styles from "./../styles/home.module.css";
@@ -10,8 +10,6 @@ import EmailIcon from "./../public/svgs/Email.svg";
 import LogoIcon from "./../public/svgs/LogoLight.svg";
 import StampIcon from "./../public/svgs/Stamp.svg";
 import DownloadIcon from "./../public/svgs/Download.svg";
-import LightModeIcon from "./../public/svgs/Light.svg";
-import DarkModeIcon from "./../public/svgs/Dark.svg";
 
 const SocialLinks = [
 	{
@@ -38,22 +36,6 @@ const SocialLinks = [
 ];
 
 export const HomeComponent = () => {
-	const [currMode, setCurrMode] = useState("");
-	useEffect(function onLoad() {
-		let activeMode: string = localStorage.getItem("theme") || "light";
-		setCurrMode(activeMode);
-		document.documentElement.setAttribute("data-theme", activeMode);
-	}, []);
-
-	function toggleModes(isDark: boolean) {
-		if (isDark) {
-			document.documentElement.setAttribute("data-theme", "dark");
-		} else {
-			document.documentElement.setAttribute("data-theme", "light");
-		}
-		localStorage.setItem("theme", isDark ? "dark" : "light");
-		setCurrMode(isDark ? "dark" : "light");
-	}
 
 	return (
 		<div className={`page ${styles.homePage}`}>
@@ -62,7 +44,7 @@ export const HomeComponent = () => {
 					<Button
 						onClick={() =>
 							window.open(
-								"https://drive.google.com/file/d/10Ti9fUeYoOsS0I5bP4wCjBYBddH3j-w8/view?usp=sharing",
+								"https://drive.google.com/file/d/1-Mnm72_sopsJ1sOKnaX16-xybyP3u4N0/view?usp=drive_link",
 								"_blank"
 							)
 						}
@@ -85,7 +67,16 @@ export const HomeComponent = () => {
 					<div className={`${styles.line} ${styles.line2}`} />
 				</div>
 				<div className={styles.heroText}>
-					<h2 className={styles.texts}>👋 Hello world</h2>
+					<h2 className={styles.texts}>
+						<img
+							src='/wave.png'
+							id='wavehands'
+							alt='👋'
+							width={"30px"}
+							className={"hand"}
+						/>
+						Hello world
+					</h2>
 					<div className={styles.mainTitle}>
 						<LogoIcon />
 						<h1 className={styles.title}>Maneesh</h1>
@@ -97,17 +88,6 @@ export const HomeComponent = () => {
 				<div className={styles.stamp}>
 					<StampIcon />
 				</div>
-			</div>
-			<div className={styles.modesToggle}>
-				{currMode === "light" ? (
-					<div onClick={() => toggleModes(true)}>
-						<DarkModeIcon />
-					</div>
-				) : (
-					<div onClick={() => toggleModes(false)}>
-						<LightModeIcon />
-					</div>
-				)}
 			</div>
 		</div>
 	);

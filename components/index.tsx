@@ -5,3 +5,4 @@ export { AboutComponent } from "./about";
 export { Button } from "./primitives/button";
 export { Title } from "./primitives/title";
 export { WorksComponent } from "./works";
+export { BGOverlayComponent } from "./overlay.jsx";

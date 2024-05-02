@@ -15,8 +15,8 @@ export const WorksComponent = () => {
 				<div className={styles.worksWrapper}>
 					{Works.map((work, index) => {
 						if (work.type === "desktop")
-							return <Desktop work={work} />;
-						else return <Mobile work={work} />;
+							return <Desktop key={index} work={work} />;
+						else return <Mobile key={index} work={work} />;
 					})}
 				</div>
 			</div>
@@ -50,7 +50,7 @@ const Desktop = ({ work }: { work: TypeWork }) => {
 				{work.links.map((link, index) => {
 					return (
 						<div
-							key={work.label}
+							key={work.label + index}
 							onClick={() => window.open(link.url, "_blank")}>
 							{link.icon}
 						</div>
@@ -103,7 +103,7 @@ const Mobile = ({ work }: { work: TypeWork }) => {
 				{work.links.map((link, index) => {
 					return (
 						<div
-							key={work.label}
+							key={work.label + index}
 							onClick={() => window.open(link.url, "_blank")}>
 							{link.icon}
 						</div>
@@ -166,14 +166,14 @@ const TECH_STACKS = {
 	EJS: {
 		name: "EJS"
 	},
-	GCP: {
-		name: "GCP"
-	},
 	MERN: {
 		name: "MERN stack"
 	},
 	PWA: {
 		name: "PWA"
+	},
+	REACT_QUERY: {
+		name: "React Query"
 	}
 };
 
@@ -187,11 +187,10 @@ const Works: TypeWork[] = [
 		date: "2021 Feb - Present",
 		stacksused: [
 			TECH_STACKS.REACT,
-			TECH_STACKS.PWA,
 			TECH_STACKS.JAVASCRIPT,
-			TECH_STACKS.TYPESCRIPT,
 			TECH_STACKS.WEBPACK,
-			TECH_STACKS.GCP
+			TECH_STACKS.REACT_QUERY,
+			TECH_STACKS.TYPESCRIPT,
 		],
 		links: [
 			{
