@@ -78,12 +78,12 @@ export const AboutComponent = () => {
 			<div className={styles.aboutContainer}>
 				<Title text={"About me"} index={"01"} />
 				<p>
-					👋🏻 Hey there, I'm Maneesh, a software developer, Presently, I'm
+					{`👋🏻 Hey there, I'm Maneesh, a software developer, Presently, I'm
 					employed as a frontend engineer at Kissflow. I thrive on
 					crafting software solutions using the web stack, and I
 					dabble in backend development through personal/hobby
 					projects. Oh, and you might catch me playing around with
-					UI/UX design in Figma now and then! 😅
+					UI/UX design in Figma now and then! 😅`}
 				</p>
 				<div>
 					<p>I have worked on following technologies</p>

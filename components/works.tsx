@@ -190,7 +190,7 @@ const Works: TypeWork[] = [
 			TECH_STACKS.JAVASCRIPT,
 			TECH_STACKS.WEBPACK,
 			TECH_STACKS.REACT_QUERY,
-			TECH_STACKS.TYPESCRIPT,
+			TECH_STACKS.TYPESCRIPT
 		],
 		links: [
 			{
@@ -224,7 +224,7 @@ const Works: TypeWork[] = [
 			},
 			{
 				label: "Website",
-				url: "https://chatndbingo.herokuapp.com/",
+				url: "https://chatndbingo.onrender.com/",
 				icon: <LinkIcon />
 			}
 		]
