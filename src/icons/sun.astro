@@ -1,0 +1,79 @@
+---
+import type { HTMLAttributes } from "astro/types";
+
+export interface Props extends HTMLAttributes<"div"> {
+  size?: number;
+}
+
+const { size = 28, class: className, ...props } = Astro.props;
+---
+
+<div {...props} id="sun-icon">
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    width={size}
+    height={size}
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke="currentColor"
+    stroke-width="2"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+  >
+    <circle cx="12" cy="12" r="4"></circle>
+    <path d="M12 2v2" class="ray"></path>
+    <path d="m19.07 4.93-1.41 1.41" class="ray"></path>
+    <path d="M20 12h2" class="ray"></path>
+    <path d="m17.66 17.66 1.41 1.41" class="ray"></path>
+    <path d="M12 20v2" class="ray"></path>
+    <path d="m6.34 17.66-1.41 1.41" class="ray"></path>
+    <path d="M2 12h2" class="ray"></path>
+    <path d="m4.93 4.93 1.41 1.41" class="ray"></path>
+  </svg>
+</div>
+
+<script>
+  import { animate } from "motion";
+
+  const container = document.getElementById("sun-icon");
+  if (container) {
+    const rays = container.querySelectorAll(".ray");
+    let animationId: any = null;
+
+    function startAnimation() {
+      // Cancel any ongoing animation
+      if (animationId) {
+        animationId.stop();
+      }
+
+      console.log("start anim :: ", rays);
+
+      // Staggered animation: each ray fades to 0 then back to 1
+      animationId = animate(
+        rays,
+        { opacity: [null, 0, 1] },
+        {
+          duration: 0.3,
+          delay: (i) => i * 0.1,
+          ease: "easeInOut",
+        }
+      );
+    }
+
+    function stopAnimation() {
+      // Stop ongoing animation and set to opacity 1
+      if (animationId) {
+        animationId.stop();
+      }
+      rays.forEach((ray) => {
+        ray.style.opacity = "1";
+      });
+    }
+
+    // Initial state
+    stopAnimation();
+
+    container.addEventListener("mouseenter", startAnimation);
+    container.addEventListener("mouseleave", stopAnimation);
+  }
+</script>

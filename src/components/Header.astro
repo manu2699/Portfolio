@@ -1,0 +1,34 @@
+---
+import Sun from "@/icons/sun.astro";
+import { SITE_TITLE } from "../consts";
+import HeaderLink from "./HeaderLink.astro";
+---
+
+<header class="m-0 p-2">
+  <nav class="flex justify-between items-center max-w-4xl mx-auto">
+    <h2><a href="/">{SITE_TITLE}</a></h2>
+    <div class="flex gap-4 items-center">
+      <HeaderLink href="/">Home</HeaderLink>
+      <HeaderLink href="/blog">Blogs</HeaderLink>
+      <Sun size={20} class="text-yellow-400" />
+    </div>
+  </nav>
+</header>
+<style>
+  h2 a,
+  h2 a.active {
+    text-decoration: none;
+  }
+  nav a {
+    text-decoration: none;
+  }
+  nav a.active {
+    font-weight: 400;
+    text-decoration: underline;
+    text-decoration-color: var(--color-secondary);
+    text-underline-offset: 4px;
+    text-decoration-thickness: 2px;
+    text-decoration-style: dashed;
+    /* border-bottom-color: var(--color-primary); */
+  }
+</style>
