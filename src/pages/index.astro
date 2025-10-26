@@ -1,0 +1,53 @@
+---
+import Layout from "@/layouts/Layout.astro";
+import AboutCard from "@/components/cards/AboutCard.astro";
+import SkillsCard from "@/components/cards/SkillsCard.astro";
+import ExperienceCard from "@/components/cards/ExperienceCard.astro";
+import ProjectCard from "@/components/cards/ProjectCard.astro";
+import LinksCard from "@/components/cards/LinksCard.astro";
+
+import { LocationCard } from "@/components/solid/LocationCard";
+
+import { getGithubRepos } from "@/utils/github.ts";
+import { projects } from "@/utils/projects.ts";
+
+const repos = await getGithubRepos();
+const getRepoNameFromUrl = (githubUrl: string) =>
+  new URL(githubUrl).pathname.substring(1).split("/")[1];
+---
+
+<Layout title="Maneesh - Portfolio" description="Personal portfolio of Maneesh">
+  <div class="grid grid-cols-1 md:grid-cols-12 gap-5">
+    <div class="md:col-span-8">
+      <AboutCard />
+    </div>
+    <div class="md:col-span-3 w-full h-full">
+      <LocationCard client:load />
+    </div>
+    <div class="md:col-span-1">
+      <LinksCard />
+    </div>
+    <div class="md:col-span-7">
+      <ExperienceCard />
+    </div>
+    <div class="md:col-span-5">
+      <SkillsCard />
+    </div>
+    {
+      projects.map((project) => (
+        <div class="md:col-span-4">
+          <ProjectCard
+            title={project.title}
+            description={project.description}
+            tech={project.tech}
+            link={project.link}
+            github={project.github}
+            lastUpdated={
+              repos.get(getRepoNameFromUrl(project.github))?.pushed_at
+            }
+          />
+        </div>
+      ))
+    }
+  </div>
+</Layout>

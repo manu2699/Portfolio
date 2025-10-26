@@ -1,0 +1,19 @@
+{
+  "formatter": {
+    "external": {
+      "command": "biome",
+      "arguments": ["format", "--stdin-file-path", "$FILE_PATH"]
+    }
+  },
+  "language_overrides": {
+    "TypeScript": {
+      "format_on_save": "external"
+    },
+    "JavaScript": {
+      "format_on_save": "external"
+    },
+    "Astro": {
+      "format_on_save": "external"
+    }
+  }
+}

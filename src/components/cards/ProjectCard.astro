@@ -1,0 +1,112 @@
+---
+import { Code } from "@lucide/astro";
+
+import GithubIcon from "@/assets/github.svg";
+
+import { ExternalLinkIcon } from "@/icons/solid";
+
+export interface Props {
+  title: string;
+  description: string;
+  tech: string[];
+  link: string;
+  github?: string;
+  lastUpdated?: string;
+}
+
+const {
+  title,
+  description,
+  tech,
+  link,
+  github,
+  lastUpdated: lastUpdatedProp,
+} = Astro.props;
+
+const lastUpdated = lastUpdatedProp ? new Date(lastUpdatedProp) : null;
+---
+
+<style>
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-color: var(--color-border);
+  }
+
+  .menuBar {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+
+  .circle1,
+  .circle2,
+  .circle3 {
+    width: 8px;
+    height: 8px;
+    border-radius: 4px;
+    background: var(--color-primary);
+    cursor: pointer;
+  }
+
+  .header:hover .circle1 {
+    background: var(--color-red-500);
+  }
+  .header:hover .circle2 {
+    background: var(--color-yellow-500);
+  }
+  .header:hover .circle3 {
+    background: var(--color-green-500);
+  }
+</style>
+<div class="card p-0 h-full flex flex-col">
+  <div class="header px-2 py-2 border-b">
+    <div class="menuBar">
+      <div class="circle1"></div>
+      <div class="circle2"></div>
+      <div class="circle3"></div>
+    </div>
+    <span class="!mb-0 text-sm second-font">{title}</span>
+    <a href={link} target="_blank" rel="noopener noreferrer">
+      <ExternalLinkIcon
+        client:load
+        size={18}
+        strokeColor="var(--color-primary)"
+        class="hover:cursor-pointer"
+      />
+    </a>
+  </div>
+  <div class="p-4 h-full flex flex-col">
+    <p class="mb-4 text-gray-500 text-sm">{description}</p>
+    <div class="flex items-center gap-1 mb-4 flex-wrap">
+      {
+        tech.map((t) => (
+          <span class="flex items-center gap-1 text-xs bg-accent text-accent-foreground p-1 px-2 border-dashed border border-border">
+            <Code class="size-3" />
+            {t}
+          </span>
+        ))
+      }
+    </div>
+    {
+      github && (
+        <div class="flex items-center justify-between mt-auto">
+          {lastUpdated ? (
+            <span class="text-xs text-gray-400 hover:cursor-pointer">
+              Last updated on:{" "}
+              {lastUpdated.toLocaleDateString(undefined, {
+                year: "numeric",
+                month: "short",
+                day: "numeric",
+              })}
+            </span>
+          ) : null}
+          <a href={github} target="_blank" rel="noopener noreferrer">
+            <GithubIcon class="size-5 text-primary hover:cursor-pointer" />
+          </a>
+        </div>
+      )
+    }
+  </div>
+</div>

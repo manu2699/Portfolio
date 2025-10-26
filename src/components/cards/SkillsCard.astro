@@ -1,0 +1,142 @@
+---
+import ReactIcon from "@/assets/react.svg";
+import JavascriptIcon from "@/assets/javascript.svg";
+import TypescriptIcon from "@/assets/typescript.svg";
+import NodeIcon from "@/assets/node.svg";
+import MongoDBIcon from "@/assets/mongo.svg";
+import SQLIcon from "@/assets/sql.svg";
+import RedisIcon from "@/assets/redis.svg";
+import WebpackIcon from "@/assets/webpack.svg";
+
+const knownTech = [
+  {
+    name: "React",
+    icon: ReactIcon,
+    description: "",
+  },
+  {
+    name: "Javascript",
+    icon: JavascriptIcon,
+    description: "",
+  },
+  {
+    name: "Typescript",
+    icon: TypescriptIcon,
+    description: "",
+  },
+  {
+    name: "Webpack",
+    icon: WebpackIcon,
+    description: "",
+  },
+  {
+    name: "Node",
+    icon: NodeIcon,
+    description: "",
+  },
+  {
+    name: "Mongo",
+    icon: MongoDBIcon,
+    description: "",
+  },
+  {
+    name: "SQL",
+    icon: SQLIcon,
+    description: "",
+  },
+  {
+    name: "Redis",
+    icon: RedisIcon,
+    description: "",
+  },
+];
+---
+
+<style>
+  .marquee-container {
+    width: 100%;
+    overflow: hidden;
+    user-select: none;
+    position: relative;
+    -webkit-mask-image: linear-gradient(
+      to right,
+      transparent,
+      black 20%,
+      black 80%,
+      transparent
+    );
+    mask-image: linear-gradient(
+      to right,
+      transparent,
+      black 20%,
+      black 80%,
+      transparent
+    );
+  }
+
+  .marquee-track {
+    display: flex;
+    width: fit-content;
+  }
+
+  .marquee-left {
+    display: flex;
+    width: max-content;
+    animation: marquee-left 40s linear infinite;
+    will-change: transform;
+  }
+
+  .marquee-item {
+    padding: 1rem 1.4rem;
+    white-space: nowrap;
+    flex-shrink: 0;
+    text-align: center;
+  }
+
+  @keyframes marquee-left {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(-100%);
+    }
+  }
+
+  @media (prefers-reduced-motion) {
+    .marquee-left {
+      animation-play-state: paused;
+    }
+  }
+</style>
+
+<div class="card flex flex-col gap-4 justify-center items-center">
+  <h5 class="second-font">Tech I Use</h5>
+  <div class="marquee-container">
+    <div class="marquee-track">
+      <div class="marquee-left">
+        {
+          [...Array(3)].map((_, index) =>
+            knownTech.map((skill) => (
+              <div class="marquee-item" aria-hidden={index == 0 ? false : true}>
+                <skill.icon class="size-16" />
+                <span class="text-gray-400 text-xs">{skill.name}</span>
+              </div>
+            ))
+          )
+        }
+      </div>
+      <div class="marquee-left" aria-hidden="true">
+        {
+          [...Array(3)].map(() =>
+            knownTech.map((skill) => (
+              <div class="marquee-item">
+                <skill.icon class="size-16" />
+                <span class="text-gray-400 text-xs">{skill.name}</span>
+              </div>
+            ))
+          )
+        }
+      </div>
+    </div>
+  </div>
+</div>
