@@ -68,15 +68,14 @@ const lastUpdated = lastUpdatedProp ? new Date(lastUpdatedProp) : null;
       <div class="circle3"></div>
     </div>
     <span class="!mb-0 text-sm second-font">{title}</span>
-    <ExternalLinkIcon
-      client:load
-      size={18}
-      strokeColor="var(--color-primary)"
-      class="hover:cursor-pointer"
-      on-click={() => window.open(link, "_blank")}
-      aria-label={`Open ${title} project link`}
-      aria-role="link"
-    />
+    <a href={link} target="_blank" rel="noopener noreferrer">
+      <ExternalLinkIcon
+        client:load
+        size={18}
+        strokeColor="var(--color-primary)"
+        class="hover:cursor-pointer"
+      />
+    </a>
   </div>
   <div class="p-4 h-full flex flex-col">
     <p class="mb-4 text-gray-500 text-sm">{description}</p>
@@ -103,12 +102,9 @@ const lastUpdated = lastUpdatedProp ? new Date(lastUpdatedProp) : null;
               })}
             </span>
           ) : null}
-          <GithubIcon
-            class="size-5 inline-block mr-2 text-primary hover:cursor-pointer"
-            on-click={() => window.open(github, "_blank")}
-            aria-label={`Open ${title} GitHub repository`}
-            aria-role="link"
-          />
+          <a href={github} target="_blank" rel="noopener noreferrer">
+            <GithubIcon class="size-5 text-primary hover:cursor-pointer" />
+          </a>
         </div>
       )
     }
