@@ -1,0 +1,19 @@
+---
+import { Image } from "astro:assets";
+import Face from "@/assets/face.png";
+---
+
+<div class="card p-7">
+  <div class="flex justify-between items-center w-full gap-8 mb-2 py-2">
+    <div class="h-full self-center">
+      <h3 class="!mb-0 text-primary">Maneesh</h3>
+      <p class="second-font !mb-0">Software Engineer</p>
+    </div>
+    <Image src={Face} alt="Maneesh" class="w-[4rem]" />
+  </div>
+  <p class="mt-4 text-base">
+    👋🏻 Hey there, I'm software engineer currently working at Tekion. As a
+    frontend heavy full stack engineer, I thrive on crafting software using web
+    stack.
+  </p>
+</div>

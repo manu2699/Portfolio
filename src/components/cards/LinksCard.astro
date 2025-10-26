@@ -1,0 +1,42 @@
+---
+import { Mail } from "@lucide/astro";
+
+import Github from "@/assets/github.svg";
+import Linkedin from "@/assets/linkedin.svg";
+
+// import { MailIcon } from "@/icons/solid";
+// import { GithubIcon } from "@/icons/react/github";
+// import { LinkedinIcon } from "@/icons/react/linkedin";
+
+const links = [
+  {
+    href: "https://github.com/manu2699",
+    title: "GitHub",
+  },
+  {
+    href: "https://www.linkedin.com/in/manuvk/",
+    title: "LinkedIn",
+  },
+  {
+    href: "mailto:maneeshvijaykar@gmail.com",
+    title: "Email",
+  },
+];
+---
+
+<div class="flex h-full w-full flex-col gap-3 justify-between items-center">
+  {
+    links.map((link) => (
+      <a
+        href={link.href}
+        target="_blank"
+        rel="noopener noreferrer"
+        class="card w-full h-full p-2 flex justify-center items-center hover:bg-accent cursor-pointer transition-all duration-700 ease-in-out"
+      >
+        {link.title === "GitHub" && <Github client:load size={20} />}
+        {link.title === "LinkedIn" && <Linkedin client:load size={20} />}
+        {link.title === "Email" && <Mail size={20} />}
+      </a>
+    ))
+  }
+</div>

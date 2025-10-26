@@ -12,15 +12,12 @@ body {
   word-wrap: break-word;
   overflow-wrap: break-word;
   color: var(--color-foreground);
-  font-size: 20px;
+  font-size: 16px;
   line-height: 1.7;
 }
 
-main {
-  width: 720px;
-  max-width: calc(100% - 2em);
-  margin: auto;
-  padding: 3em 1em;
+.second-font {
+  font-family: var(--font-sans-secondary);
 }
 
 h1,
@@ -29,8 +26,16 @@ h3,
 h4,
 h5,
 h6 {
-  margin: 0 0 0.5rem 0;
+  margin: 0;
+  margin-bottom: 0.5rem;
+  font-family: var(--font-sans-secondary);
   line-height: 1.2;
+  font-weight: 500;
+}
+
+p{
+  margin: 0;
+  font-size: 1rem;
 }
 
 h1 {
@@ -47,6 +52,9 @@ h4 {
 }
 h5 {
   font-size: 1.25em;
+}
+h6 {
+  font-size: 1em;
 }
 
 strong,
@@ -111,6 +119,32 @@ blockquote {
 hr {
   border: none;
   border-top: 1px solid rgb(var(--gray-light));
+}
+
+@layer components {
+  .card {
+    background-color: var(--card);
+    padding: calc(var(--spacing) * 6) calc(var(--spacing) * 8);
+    box-shadow: var(--shadow-xs);
+    border-radius: var(--radius-lg);
+    height: 100%;
+    border: 1px dashed var(--color-border);
+    position: relative;
+    &::before{
+        content: "+";
+        position: absolute;
+        top: -14px;
+        left: -4px;
+        color: var(--color-border);
+    }
+    &::after{
+        content: "+";
+        position: absolute;
+        bottom: -14px;
+        right: -4px;
+        color: var(--color-border);
+    }
+  }
 }
 
 @media (max-width: 720px) {

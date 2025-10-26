@@ -1,5 +1,5 @@
 :root {
-  --background: oklch(1 0 0);
+  --background: oklch(0.97 0 0 / 0.97);
   --foreground: oklch(0.2795 0.0368 260.031);
 
   --card: oklch(1 0 0);
@@ -10,7 +10,7 @@
 
   --primary: oklch(0.5982 0.1359 240.3818);
   --primary-foreground: oklch(1 0 0);
-  --secondary: oklch(0.9067 0.1884 102.9486);
+  --secondary: oklch(0.8544 0.1746 89.6364);
   --secondary-foreground: oklch(0.1541 0.0046 264.4321);
 
   --muted: oklch(0.9551 0 0);
@@ -69,7 +69,7 @@
 
   --primary: oklch(0.7732 0.1126 228.4752);
   --primary-foreground: oklch(0.2244 0.0074 67.437);
-  --secondary: oklch(0.8458 0.1769 103.1359);
+  --secondary: oklch(0.8498 0.1700 92.3562);
   --secondary-foreground: oklch(0.2759 0.0102 260.7036);
 
   --muted: oklch(0.2287 0.0074 67.4469);
@@ -86,7 +86,7 @@
   --font-sans: "Synonym", sans-serif;
   --font-sans-secondary: "Chillax", sans-serif;
 
-  --radius: 0rem;
+  /*--radius: 0rem;*/
   --shadow-x: 1px;
   --shadow-y: 2px;
   --shadow-blur: 20px;

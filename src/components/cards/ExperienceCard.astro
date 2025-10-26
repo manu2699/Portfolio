@@ -1,0 +1,44 @@
+---
+const experiences = [
+  {
+    role: "Software engineer",
+    company: "Tekion",
+    date: "Oct 2024 - Present",
+    description: "Building and experimenting with web technologies.",
+  },
+  {
+    role: "Software engineer",
+    company: "Kissflow",
+    date: "Jul 2022 - Oct 2024",
+    description: "Developed a nutrition tracking application.",
+  },
+  {
+    role: "Associate software engineer",
+    company: "Kissflow",
+    date: "Feb 2021 - Jun 2022",
+    description: "Built a tool to analyze cryptocurrency trends.",
+  },
+];
+---
+
+<div class="card">
+  <h5>Experience</h5>
+  <div
+    class="mx-1 mt-4 border-l-[1.5px] border-primary border-dashed flex flex-col gap-4 pl-7 p-2 overflow-visible"
+  >
+    {
+      experiences.map((experience, index) => (
+        <div class="overflow-visible">
+          <span class="relative flex items-center mb-1 text-base">
+            <span class="absolute left-[-33px] flex items-center justify-center size-2 bg-secondary ring-2 ring-primary" />
+            {experience.role}
+            <span class="ml-1">@ {experience.company}</span>
+          </span>
+          <time class="block mb-1 text-sm font-normal second-font text-gray-500">
+            {experience.date}
+          </time>
+        </div>
+      ))
+    }
+  </div>
+</div>
