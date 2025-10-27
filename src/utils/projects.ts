@@ -41,7 +41,7 @@ export const projects: Project[] = [
   {
     title: "Covid Tracker",
     description:
-      "To track covid stats live for India, with district wise data in a visualised map, estimate the distance between you and the nearest case.",
+      "A mobile app to track COVID-19 case trends in India, per-state breakdown, and visualizations.",
     tech: ["React native", "D3.js"],
     link: "https://w3devz.vercel.app/covid19tracker.html",
     github: "https://github.com/manu2699/Covid_19_Tracker",

@@ -33,7 +33,7 @@ h6 {
   font-weight: 500;
 }
 
-p{
+p {
   margin: 0;
   font-size: 1rem;
 }
@@ -130,29 +130,43 @@ hr {
     height: 100%;
     border: 1px dashed var(--color-border);
     position: relative;
-    &::before{
-        content: "+";
-        position: absolute;
-        top: -14px;
-        left: -4px;
-        color: var(--color-border);
+    &::before {
+      content: "+";
+      position: absolute;
+      font-size: 1.35rem;
+      top: -20px;
+      left: -6px;
+      color: var(--color-border);
     }
-    &::after{
-        content: "+";
-        position: absolute;
-        bottom: -14px;
-        right: -4px;
-        color: var(--color-border);
+    &::after {
+      content: "+";
+      font-size: 1.35rem;
+      position: absolute;
+      bottom: -18px;
+      right: -6px;
+      color: var(--color-border);
     }
   }
 }
 
-@media (max-width: 720px) {
-  body {
-    font-size: 18px;
-  }
-  main {
-    padding: 1em;
+@media (max-width: 48rem) {
+  .card {
+    border: 1px dashed var(--color-border);
+    position: relative;
+    &::before {
+      content: "+";
+      font-size: 1.35rem;
+      position: absolute;
+      top: -20px;
+      left: -6px;
+    }
+    &::after {
+      content: "+";
+      font-size: 1.35rem;
+      position: absolute;
+      bottom: -18px;
+      right: -6px;
+    }
   }
 }
 
