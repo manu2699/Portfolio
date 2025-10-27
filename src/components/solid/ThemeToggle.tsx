@@ -44,14 +44,14 @@ export const ThemeToggle = () => {
         when={theme() == "light"}
         fallback={
           <SunIcon
-            strokeColor="var(--color-primary)"
+            strokeColor="var(--color-secondary)"
             size={20}
             class="hover:cursor-pointer"
           />
         }
       >
         <MoonIcon
-          strokeColor="var(--color-primary)"
+          strokeColor="var(--color-secondary)"
           size={20}
           class="hover:cursor-pointer"
         />

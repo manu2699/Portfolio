@@ -1,4 +1,6 @@
 ---
+import Analytics from "@vercel/analytics/astro";
+
 import BaseHead from "@/components/BaseHead.astro";
 import Header from "@/components/Header.astro";
 import Footer from "@/components/Footer.astro";
@@ -15,10 +17,11 @@ const { title, description } = Astro.props;
 <html lang="en">
   <head>
     <BaseHead title={title} description={description} />
+    <Analytics />
   </head>
   <body class="bg-secondary dark:bg-primary text-primary dark:text-secondary">
     <Header />
-    <main class="mx-auto max-w-4xl p-6 pt-21 md:p-2 md:pt-20">
+    <main class="mx-auto max-w-4xl p-6 pt-21 md:p-1 md:pt-20">
       <slot />
     </main>
     <Footer />
