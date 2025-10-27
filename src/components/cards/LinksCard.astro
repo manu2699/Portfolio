@@ -31,10 +31,10 @@ const links = [
         href={link.href}
         target="_blank"
         rel="noopener noreferrer"
-        class="card w-full h-full p-2 flex justify-center items-center hover:bg-accent cursor-pointer transition-all duration-700 ease-in-out"
+        class="card w-full h-full p-2 flex justify-center items-center hover:bg-accent cursor-pointer transition-[color] duration-700 ease-in-out"
       >
-        {link.title === "GitHub" && <Github client:load size={20} />}
-        {link.title === "LinkedIn" && <Linkedin client:load size={20} />}
+        {link.title === "GitHub" && <Github size={20} />}
+        {link.title === "LinkedIn" && <Linkedin size={20} />}
         {link.title === "Email" && <Mail size={20} />}
       </a>
     ))

@@ -42,9 +42,19 @@ export const ThemeToggle = () => {
     <button onClick={toggleTheme}>
       <Show
         when={theme() == "light"}
-        fallback={<SunIcon strokeColor="var(--color-primary)" size={20} />}
+        fallback={
+          <SunIcon
+            strokeColor="var(--color-primary)"
+            size={20}
+            class="hover:cursor-pointer"
+          />
+        }
       >
-        <MoonIcon strokeColor="var(--color-primary)" size={20} />
+        <MoonIcon
+          strokeColor="var(--color-primary)"
+          size={20}
+          class="hover:cursor-pointer"
+        />
       </Show>
     </button>
   );

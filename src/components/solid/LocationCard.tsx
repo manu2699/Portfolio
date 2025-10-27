@@ -35,19 +35,19 @@ export const LocationCard = () => {
             <img
               src={MapLight.src}
               alt="Map of Chennai"
-              class="w-full h-full rounded-none object-cover"
+              class="w-full !h-full !rounded-none object-cover"
             />
           }
         >
           <img
             src={MapDark.src}
             alt="Map of Chennai"
-            class="w-full h-full rounded-none object-cover"
+            class="w-full !h-full !rounded-none object-cover"
           />
         </Show>
-        <p class="absolute bottom-4 left-0 right-0 text-center text-sm">
+        <span class="absolute bottom-2 left-0 right-0 text-center text-sm backdrop-blur-sm px-2">
           Chennai, India
-        </p>
+        </span>
       </div>
     </div>
   );

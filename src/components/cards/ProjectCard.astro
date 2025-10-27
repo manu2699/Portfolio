@@ -27,17 +27,26 @@ const lastUpdated = lastUpdatedProp ? new Date(lastUpdatedProp) : null;
 ---
 
 <style>
+  .card-ref {
+    transition: transform 0.2s ease-in-out;
+  }
+
   .header {
     display: flex;
     justify-content: space-between;
     align-items: center;
     border-color: var(--color-border);
+    position: relative;
   }
 
   .menuBar {
     display: flex;
     align-items: center;
-    gap: 6px;
+    gap: 4px;
+    position: absolute;
+    left: 6px;
+    top: 45%;
+    transform: translateY(-50%);
   }
 
   .circle1,
@@ -46,28 +55,26 @@ const lastUpdated = lastUpdatedProp ? new Date(lastUpdatedProp) : null;
     width: 8px;
     height: 8px;
     border-radius: 4px;
-    background: var(--color-primary);
+    background: var(--color-secondary);
     cursor: pointer;
   }
 
-  .header:hover .circle1 {
+  .card-ref:hover .circle1 {
     background: var(--color-red-500);
   }
-  .header:hover .circle2 {
-    background: var(--color-yellow-500);
-  }
-  .header:hover .circle3 {
+  .card-ref:hover .circle3 {
     background: var(--color-green-500);
   }
 </style>
-<div class="card p-0 h-full flex flex-col">
+<div class="card p-0 h-full flex flex-col card-ref">
   <div class="header px-2 py-2 border-b">
     <div class="menuBar">
       <div class="circle1"></div>
       <div class="circle2"></div>
       <div class="circle3"></div>
     </div>
-    <span class="!mb-0 text-sm second-font">{title}</span>
+    <div class="size-1 opacity-0"></div>
+    <span class="!mb-0 second-font">{title}</span>
     <a href={link} target="_blank" rel="noopener noreferrer">
       <ExternalLinkIcon
         client:load
@@ -78,7 +85,7 @@ const lastUpdated = lastUpdatedProp ? new Date(lastUpdatedProp) : null;
     </a>
   </div>
   <div class="p-4 h-full flex flex-col">
-    <p class="mb-4 text-gray-500 text-sm">{description}</p>
+    <p class="mb-4 text-sm font-light">{description}</p>
     <div class="flex items-center gap-1 mb-4 flex-wrap">
       {
         tech.map((t) => (
@@ -93,7 +100,7 @@ const lastUpdated = lastUpdatedProp ? new Date(lastUpdatedProp) : null;
       github && (
         <div class="flex items-center justify-between mt-auto">
           {lastUpdated ? (
-            <span class="text-xs text-gray-400 hover:cursor-pointer">
+            <span class="text-xs second-font text-gray-400 hover:cursor-pointer">
               Last updated on:{" "}
               {lastUpdated.toLocaleDateString(undefined, {
                 year: "numeric",

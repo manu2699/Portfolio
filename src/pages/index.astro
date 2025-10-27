@@ -17,25 +17,25 @@ const getRepoNameFromUrl = (githubUrl: string) =>
 ---
 
 <Layout title="Maneesh - Portfolio" description="Personal portfolio of Maneesh">
-  <div class="grid grid-cols-1 md:grid-cols-12 gap-5">
-    <div class="md:col-span-8">
+  <div class="grid grid-cols-3 md:grid-cols-12 gap-5">
+    <div class="col-span-3 md:col-span-8">
       <AboutCard />
     </div>
-    <div class="md:col-span-3 w-full h-full">
+    <div class="col-span-2 md:col-span-3 w-full h-full">
       <LocationCard client:load />
     </div>
-    <div class="md:col-span-1">
+    <div class="col-span-1">
       <LinksCard />
     </div>
-    <div class="md:col-span-7">
+    <div class="col-span-3 md:col-span-7">
       <ExperienceCard />
     </div>
-    <div class="md:col-span-5">
+    <div class="col-span-3 md:col-span-5">
       <SkillsCard />
     </div>
     {
       projects.map((project) => (
-        <div class="md:col-span-4">
+        <div class="col-span-3 md:col-span-4">
           <ProjectCard
             title={project.title}
             description={project.description}
