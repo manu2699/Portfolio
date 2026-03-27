@@ -67,7 +67,7 @@ And lets assume the user have finished reading the 1st news within 3 minutes, an
 > Note: incomplete - say about cacheTime and staleTime 
 
 
-#### 3. `key` is the key...
+#### 3. `key` is the key (Identity)...
 
 We would, need to provide key and promise to `useQuery` hook, where promise's resolution or rejection is linked to the key and its available across the app. Consider this scenario of a news application,
 
@@ -81,22 +81,59 @@ We would, need to provide key and promise to `useQuery` hook, where promise's re
 
 Therefore the `key`(cache key) you're providing to `useQuery` is the acts both as cache identifier as well as **dependency**,
 
-#### 5. Acts as global server state and connect all dots.
+#### 4. Acts as global server state and connect all dots.
 
 Think of every api call that you make will live along with user's session on the browser untill he reloads / closes your tab. Since we use react query for fetching data from our backend server we can call it as a `server state` and this server state needs a key to uniquely identify data across the session. Thus utilization of proper keys & server state via react query across different component reduces the usage of external stores like redux, zustand etc... Remember it just minimizes the usage of these store but doesn't completely eliminate the need for them.
 
-To understand this more better lets consider our same news application and consider we’re  having following features
+To understand this more better lets consider our same news application and consider we’re having following features:
 
-- collapsible left nav with categories
-- focus mode that highlights key context of news
-- read aloud mode
-- text size & color switcher
+- Collapsible left nav with categories
+- Focus mode that highlights key context of news
+- Read aloud mode
+- Text size & color switcher
 
 We can categoriese all these actions as client state and use external stores for them, while the key underlying data acts as a server state. 
 
 But theres a catch, in certain scenario we need to interlace both client and server state together, take above example where we had a categories for news list page, we can have category as a client state that reacts instantly to user change event and fetches data behind the scenes by simple including category on the querykey.
 Let consider another scenario, where we’re having user details page where in he can modify his name, region, other vital details, these are obviously needed to be a client data due to user interactions, while submitting the changes it transforms to be server data saving all these vitals, for these kinda scenarios optimistic mutation/updates kicks in, here we assume the change api call to be successfull and perform stuff we would do in happy path, if in case update api has failed we would just revert back to user form stating some error has occured.
 
-#### 3. Invalidation & Refetchings
+#### 5. Invalidation & Refetchings (Control levers)
 
-Assume you're a 
+Assume you're a user who just posted a comment on a news article. The comment goes through, but the news detail page still shows old data from cache — your comment is nowhere to be seen. This is exactly where invalidation comes in.
+
+`invalidateQueries` is react query's way of saying "hey, this cached data is outdated now, go refetch it". Which you'll typically call this inside a `useMutation`'s `onSuccess` callback.
+
+```js
+const queryClient = useQueryClient();
+const { mutate: postComment } = useMutation(submitComment, {
+  onSuccess: () => {
+    queryClient.invalidateQueries(['news', 'info', newsId]);
+  }
+});
+```
+
+The moment the mutation succeeds, react query marks `['news', 'info', newsId]` as stale and if that query is currently mounted somewhere on screen it will immediately trigger a refetch. If its not mounted, next time the component mounts it will refetch regardless of what `staleTime` says.
+
+You can also invalidate broader slices of your cache using partial key matching. Say the user just published a brand new news article, you'd wanna bust both the list and trending queries at once,
+
+```js
+queryClient.invalidateQueries(['news']); // invalidates anything starting with ['news']
+```
+
+This is where having a well structured key hierarchy like `['news', 'list', category]` or `['news', 'info', newsId]` really pays off — you get surgical control over what to bust & what to leave intact.
+
+And sometimes you don't even need a mutation to trigger a refetch, maybe you just want to manually refresh data on a button click or after some user action. `refetchQueries` is your friend there,
+
+```js
+queryClient.refetchQueries(['news', 'list', 'all']);
+```
+
+Unlike invalidation, `refetchQueries` fires the network call immediately regardless of stale status, so use it only when you're sure you need the lastest data at the moment.
+
+> Note: Invalidation & Refetching are fine grained tools, but over-invalidating defeats the whole purpose of the cache you've been building. Invalidate only what actually changed.
+
+
+#### Closing Thoughts
+
+We generally call API, store its data and state and sync UI, with traditional fetching libraries, but here in tanstack query we are scoping much more that like we attach the data to key, manage its life cycle, one key might have relations with other keys etc. 
+> Remember that identity and control lever are in your hands!!

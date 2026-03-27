@@ -100,6 +100,7 @@ code {
 
 pre {
   padding: 16px;
+  margin-block: 4px 8px;
   code {
     all: unset;
     font-size: 0.9em;
@@ -117,6 +118,20 @@ blockquote {
   padding: 0 0 0 20px;
   margin: 0px;
   font-size: 1.333em;
+}
+
+.prose ul,
+.prose ol {
+  margin: 1em 0;
+  padding-left: 1.5em;
+  list-style-position: outside;
+  list-style-type: unset;
+}
+
+.prose li {
+  display: list-item !important;
+  list-style-type: disc !important;
+  margin: 0.25em 0;
 }
 
 hr {
