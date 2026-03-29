@@ -2,10 +2,11 @@
 import { type CollectionEntry } from "astro:content";
 import FormattedDate from "../components/FormattedDate.astro";
 import Layout from "./Layout.astro";
+import { BlogMetrics } from "../components/solid/BlogMetrics";
 
-type Props = CollectionEntry<"blog">["data"];
+type Props = CollectionEntry<"blog">["data"] & { slug: string };
 
-const { title, description, pubDate } = Astro.props;
+const { title, description, pubDate, slug } = Astro.props;
 ---
 
 <Layout title={title} description={description}>
@@ -13,8 +14,11 @@ const { title, description, pubDate } = Astro.props;
     <header class="mb-8">
       <h1 class="text-4xl font-bold">{title}</h1>
       <p class="text-gray-500 dark:text-gray-400 mt-2">{description}</p>
-      <div class="mt-4">
+      <div
+        class="mt-4 flex gap-6 items-center justify-between border-y border-gray-100 dark:border-gray-800 py-4 px-2 text-sm text-gray-400"
+      >
         <FormattedDate date={pubDate} />
+        <BlogMetrics client:load slug={slug} />
       </div>
     </header>
     <div class="prose dark:prose-invert max-w-none">
